@@ -1,0 +1,23 @@
+<h4>List of 3 Cities</h4>
+<div class="row" >
+  <div class="col-md-15 col-sm-3" *ngFor="let city of cities">
+    <section class="ajax-section">
+      <div class="container">
+        <ul class="cities city-border" ><li class="city">
+          <h2 class="city-name" data-name="Hyderabad,IN">
+            <span>{{city.location.name}}</span>
+            <sup class="sunrise">{{city.location.country}}</sup>
+          </h2>
+          <div class="city-temp">{{city.current.temperature}}<sup>°C</sup></div>
+          <figure>
+            <img class="weather-icon" [src]="city.current.weather_icons[0]"  alt="weather-icon">
+            <figcaption class="description">{{city.location.localtime | date : 'short'}}</figcaption>
+          </figure>
+
+
+        </li></ul>
+      </div>
+    </section>
+  </div>
+
+</div>
